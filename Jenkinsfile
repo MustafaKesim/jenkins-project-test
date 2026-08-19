@@ -5,10 +5,9 @@ pipeline {
         nodejs 'Node20'   // Jenkins > Global Tool Configuration'da tanimladigin NodeJS ismiyle ayni olmali
     }
 
-    options { 
-        timestamps() 
-        disableConcurrentBuilds() 
-        ansiColor('xterm') 
+    options {
+        timestamps()
+        disableConcurrentBuilds()
     }
 
     stages {
@@ -36,8 +35,15 @@ pipeline {
 
         stage('Test') {
             steps {
-                echo '🧪 Testler calistiriliyor...'
+                echo '🧪 Testler calistiriliyor (Jest)...'
                 sh 'npm test'
+            }
+        }
+
+        stage('Manual Test') {
+            steps {
+                echo '🧪 Testler calistiriliyor (framework yok, elle yazilmis kontrol)...'
+                sh 'npm run test:manual'
             }
         }
 

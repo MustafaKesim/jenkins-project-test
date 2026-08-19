@@ -6,6 +6,7 @@
   "scripts": {
     "lint": "eslint . --ext .js",
     "test": "jest --colors",
+    "test:manual": "node manual-test.js",
     "build": "node build.js",
     "start": "node index.js"
   },
