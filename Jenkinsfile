@@ -5,10 +5,7 @@ pipeline {
         nodejs 'Node20'   // Jenkins > Global Tool Configuration'da tanimladigin NodeJS ismiyle ayni olmali
     }
 
-    options {
-        timestamps()
-        disableConcurrentBuilds()
-    }
+    options { timestamps() disableConcurrentBuilds() ansiColor('xterm') }
 
     stages {
 
