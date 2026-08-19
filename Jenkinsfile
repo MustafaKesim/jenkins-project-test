@@ -34,12 +34,6 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                echo '🧪 Testler calistiriliyor (Jest)...'
-                sh 'npm test'
-            }
-        }
 
         stage('Manual Test') {
             steps {
@@ -47,6 +41,15 @@ pipeline {
                 sh 'npm run test:manual'
             }
         }
+        
+        stage('Test') {
+            steps {
+                echo '🧪 Testler calistiriliyor (Jest)...'
+                sh 'npm test'
+            }
+        }
+
+        
 
         stage('Build') {
             steps {
